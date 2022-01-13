@@ -1,8 +1,12 @@
 [package]
-name = "foto-image-transformer"
+# name = "foto-image-transformer"
+name = "foto"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+console = "0.15.0"
+json_minimal = "0.1.3"
+regex = "1"
