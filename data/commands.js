@@ -12,6 +12,7 @@
 			values: {
 				no: {
 					description: "Do not backup",
+                    // type: "string" // implicitly set to be 'string'
 				},
 				yes: {
 					// use later?
@@ -36,9 +37,17 @@
 	},
 	{
 		name: "halve",
-		description: "",
+		description: "Halve the resolution",
 		structure: {
 			type: "FLAG",
 		},
 	},
+    {
+        name: "(png|jpg):([1-9][0-9]?0?)",
+        description: "Set type:quality of the output file (0-100, higher is better)",
+        structure: {
+            type: "MATCH",
+            types: ["u8"],
+        }
+    }
 ];

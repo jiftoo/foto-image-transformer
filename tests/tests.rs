@@ -29,7 +29,17 @@ mod tests {
 
         let json = cast!(parse_commands(), Json::ARRAY);
         for a in json {
-            println!("{:?}", a);
+            match a.get("name").unwrap().unbox() {
+                Json::JSON(vals) => {
+                    println!("{}", vals.len());
+                }
+                Json::OBJECT { name, value } => match value {
+                    Json::STRING(val) => {
+                        println!("{}:{}", name, val);
+                    }
+                },
+                _ => {}
+            }
         }
         // proc::execute(vec![]);
     }
